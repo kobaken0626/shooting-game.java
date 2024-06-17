@@ -14,6 +14,9 @@ public class Player extends Character implements KeyListener{
 		if (x>370) x=370;
 	}
 	
+	public void keyTyped(KeyEvent e) {
+	}
+	
 	public void keyPressed(KeyEvent e) {
 		//キーボードが押されたときの処理(9章)
 		if (e.getKeyCode()==KeyEvent.VK_LEFT) {
@@ -21,6 +24,9 @@ public class Player extends Character implements KeyListener{
 		}
 		if (e.getKeyCode()==KeyEvent.VK_RIGHT) {
 			vx=5;
+		}
+		if (e.getKeyCode()==KeyEvent.VK_SPACE) {
+			GameWorld.playerBullets.add(new PlayerBullet(x,y,0,-10));
 		}
 	}
 	public void keyReleased(KeyEvent e) {
@@ -31,7 +37,5 @@ public class Player extends Character implements KeyListener{
 		if (e.getKeyCode()==KeyEvent.VK_RIGHT) {
 			vx=0;
 		}
-	}
-	public void keyTyped(KeyEvent e) {
 	}
 }
