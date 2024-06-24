@@ -62,11 +62,14 @@ public class GameFrame extends MyFrame{
 				Enemy e=GameWorld.enemies.get(j);
 				if(checkHit(e,b)){
 					    System.out.println("あたり");
-					    hits++;
-						GameWorld.enemies.remove(j);
-						}else {
-						j++;
-						}
+					hits++;
+					e.life--;
+				}
+			    if(e.life<=0){
+			    	GameWorld.enemies.remove(j);
+				}else {
+					j++;
+				}
 			}
 			if(hits>0) {
 				GameWorld.playerBullets.remove(i);
