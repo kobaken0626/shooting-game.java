@@ -5,7 +5,7 @@ public class GameFrame extends MyFrame{
 		GameWorld.player=new Player(100,300,0,0);
 		addKeyListener(GameWorld.player);
 		GameWorld.stage=1;
-		GameWorld.score=0;
+		GameWorld.score=0; 
 		while(true) {
 			GameWorld.player.x=100;
 			GameWorld.player.y=300;
