@@ -5,7 +5,7 @@ public class GameFrame extends MyFrame{
 		GameWorld.player=new Player(100,300,0,0);
 		addKeyListener(GameWorld.player);
 		GameWorld.stage=1;
-		GameWorld.stage=0;
+		GameWorld.score=0;
 		while(true) {
 			GameWorld.player.x=100;
 			GameWorld.player.y=300;
@@ -16,7 +16,7 @@ public class GameFrame extends MyFrame{
 			while(true){
 				clear();
 				drawString("Stage = "+GameWorld.stage,300,50,15);
-				drawString("Stage = "+GameWorld.stage,300,80,15);
+				drawString("Score = "+GameWorld.score,300,80,15);
 				GameWorld.player.draw(this);
 				GameWorld.player.move();
 				movePlayerBullets();
